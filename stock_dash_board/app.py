@@ -5,6 +5,7 @@ import seaborn as sns
 sns.set_style('whitegrid')
 from Statistics import *
 from Charting import *
+import plotly.express as px
 
 
 def main_page():
@@ -42,11 +43,14 @@ def main_page():
         ### Stock Statistics""")
         #correlation matrix
         corr = df_change.corr()
+        st.write("""Correlation Matrix""",width = 1000)
+
         st.write(corr.style.background_gradient(cmap='BrBG_r'))
 
         st.write("""
         #
         """)
+
         #plot distribution of pct change
         fig, axes = plt.subplots(1, len(company_list) , figsize=(30, 10))
         for name, x in zip(company_list, range(len(company_list))):
@@ -93,16 +97,13 @@ def main_page():
         portfolio['Std'] = df_risk.Std.values
         portfolio['AdjStd'] = portfolio['Std'] * portfolio['Weight']
 
-        st.write(portfolio)
-        # df = portfolio.copy()
-        # df['Weight'] = df['Weight'] * 100
-        # fig = px.pie(df[['Weight']], names=df.index.values, title='Portfolio Weight', color_discrete_sequence=px.colors.sequential.RdBu)
-        # st.plotly_chart(fig)
+        st.write(portfolio, use_container_width=True)
 
-        fig2,ax2 = plt.subplots(1,1,figsize=(5,5))
-        ax2 = plt.pie(portfolio.Weight*100, labels=portfolio.index.values, autopct='%1.1f%%', startangle=90)
-        st.pyplot(fig2,width=200,height=200)
-
+        # fig2,ax2 = plt.subplots(1,1,figsize=(5,5))
+        # ax2 = plt.pie(portfolio.Weight*100, labels=portfolio.index.values, autopct='%1.1f%%', startangle=90)
+        # st.pyplot(fig2,width=200,height=200)
+        pie = px.pie(portfolio.Weight*100, values='Weight', names=portfolio.index, title='Portfolio Weight', color_discrete_sequence=px.colors.sequential.RdBu)
+        st.plotly_chart(pie, use_container_width=True)
         portfolio_beta = round(portfolio['Adjbeta'].sum(), 4)
         portfolio_std = round(portfolio['AdjStd'].sum(), 4)
         st.write(f"""##### Portfolio Beta: {portfolio_beta}""")
@@ -113,11 +114,21 @@ def main_page():
 
 def sidebar_page():
     st.sidebar.write('This is a sidebar')
+    st.markdown(
+        f'''
+            <style>
+                .sidebar .sidebar-content {{
+                    width: 150px;
+                }}
+            </style>
+        ''',
+        unsafe_allow_html=True
+    )
 
 
 
 if __name__ == '__main__':
+    st.set_page_config(page_title='Stock Analysis', page_icon='📈',layout='wide')
     main_page()
     sidebar_page()
-
 

@@ -3,9 +3,7 @@ import numpy as np
 import datetime
 import vnquant.DataLoader as dl
 import investpy
-import matplotlib.pyplot as plt
-import bokeh.plotting as bkp
-import plotly.graph_objs as go
+
 
 
 class risk_analysis(object):

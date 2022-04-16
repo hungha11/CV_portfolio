@@ -3,11 +3,8 @@ from load_data import *
 import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_style('whitegrid')
-from bokeh.plotting import figure
-from bokeh.sampledata.autompg import autompg as df
-import plotly.express as px
 from Statistics import *
-
+from Charting import *
 
 
 def main_page():

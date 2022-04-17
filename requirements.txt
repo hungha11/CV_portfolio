@@ -9,3 +9,4 @@ datetime==4.4
 backtesting==0.3.3
 investpy==1.0.8
 beautifulsoup4~=4.10.0
+click==7.1.2

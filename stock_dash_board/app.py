@@ -31,7 +31,7 @@ def main_page():
         """)
 
 
-    if target and amount:
+    if target and amount :
         company_list = target.split(',')
 
         number_of_shares = amount.split(',')
@@ -122,12 +122,12 @@ def main_page():
         portfolio_std = round(portfolio['AdjStd'].sum(), 4)
         st.write(f"""##### Portfolio Beta: {portfolio_beta}""")
         st.write(f'##### Portfolio Standard Deviation: {portfolio_std}%')
-
+    else:
+        st.write("Missing stock or number of stock")
 
 
 
 def sidebar_page():
-    st.sidebar.write('This is a sidebar')
     st.markdown(
         f'''
             <style>

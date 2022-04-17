@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import datetime
-import vnquant.DataLoader as dl
+import quantData.Dataloading as dl
 import investpy
 
 

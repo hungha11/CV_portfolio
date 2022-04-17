@@ -16,6 +16,20 @@ def main_page():
     target = st.text_input('Enter stock symbol: ')
     target = target.upper()
     amount = st.text_input('Enter amount: ')
+    with st.expander('Some information'):
+        st.write("""
+        - Correlation Matrix: Correlation between the stocks can indicate the "trend" between the stocks. 
+        For example, if the correlation between the stocks is high, it means that the stocks are in the same direction.
+        On the other hand, if the correlation is low, it means that the stocks are in different direction. 
+        Therefore, if the portfolio have many stocks that are highly correlated, it can be a little bit too risky.
+        - Weight: The weight of each stock in the portfolio. The weight is the amount of money that the stock is worth.
+        - Beta: The tendency of the stock to move in the same direction as the index.
+        - Adjusted beta (AdjBeta): Weight * Beta
+        - Standard Deviation (Std): 68% return values lie within 1 standard deviation of the mean. 95% lie within 2 standard deviations. 
+        - Adjusted Standard Deviation (AdjStd): Weight * Std 
+        
+        """)
+
 
     if target and amount:
         company_list = target.split(',')
@@ -124,6 +138,22 @@ def sidebar_page():
         ''',
         unsafe_allow_html=True
     )
+    st.sidebar.write("""
+    ### Some notes
+    Although there are lots og problem with this program such as:\n
+    - The data is not well organized
+    - Some missing data can lead to wrong result or even not working
+    - The math behind can be wrong
+    However, this program can help people to understand the concept of portfolio and how to use it to make a better decision.
+    Risk monitoring is the main purpose of this program.
+        
+    ***
+    To use this program:
+    - Choose the stocks and amount of stocks, there must be at least 2 stocks and the number of stocks must be bigger than 100
+    
+    ***
+    Info: [Github]("https://github.com/hungha11")
+    """)
 
 
 

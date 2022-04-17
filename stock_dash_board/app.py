@@ -152,7 +152,7 @@ def sidebar_page():
     - Choose the stocks and amount of stocks, there must be at least 2 stocks and the number of stocks must be bigger than 100
     
     ***
-    Info: [Github]("https://github.com/hungha11")
+    Info: [Github](https://github.com/hungha11)
     """)
 
 

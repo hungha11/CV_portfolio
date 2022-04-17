@@ -158,7 +158,7 @@ def sidebar_page():
 
 
 if __name__ == '__main__':
-    st.set_page_config(page_title='Stock Analysis', page_icon='📈',layout='wide')
+    st.set_page_config(page_title='Portfolio Risk Monitoring', page_icon='📈',layout='wide')
     main_page()
     sidebar_page()
 

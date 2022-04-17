@@ -15,7 +15,7 @@ def main_page():
 
     target = st.text_input('Enter stock symbol: ')
     target = target.upper()
-    amount = st.text_input('Enter amount: ')
+    amount = st.text_input('Enter amount (eg: 100,100): ',)
     with st.expander('Some information'):
         st.write("""
         - Correlation Matrix: Correlation between the stocks can indicate the "trend" between the stocks. 

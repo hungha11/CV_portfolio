@@ -1,10 +1,8 @@
-import quantData.Dataloading as dl
+from quantData import Dataloading as dl
 import pandas as pd
-import numpy as np
 import datetime
-from backtesting import Backtest, Strategy
+from backtesting import Strategy
 from backtesting.lib import crossover
-from backtesting.lib import resample_apply
 from backtesting.test import SMA
 
 

@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
-import quantData.pipline as utils
+import test2 as utils
 import pandas as pd
 import logging as logging
 import re

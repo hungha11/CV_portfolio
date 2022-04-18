@@ -143,7 +143,7 @@ def sidebar_page():
     Although there are lots og problem with this program such as:\n
     - The data is not well organized
     - Some missing data can lead to wrong result or even not working
-    - The math behind can be wrong
+    
     However, this program can help people to understand the concept of portfolio and how to use it to make a better decision.
     Risk monitoring is the main purpose of this program.
         

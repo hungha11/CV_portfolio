@@ -75,7 +75,7 @@ def main_page():
             st.pyplot(fig)
         else:
             fig, axes = plt.subplots(1, 1 , figsize=(10, 5))
-            sns.histplot(data=df_change[company_list[0]], ax=axes, kde=True, bins=35)
+            sns.histplot(data=df_change, ax=axes, kde=True, bins=35)
             st.pyplot(fig)
 
 

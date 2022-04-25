@@ -43,6 +43,7 @@ def main_page():
 
         data = d.copy()
 
+
         for name in company_list:
             data[name]['Pctchange'] = data[name].close.pct_change()
             data[name] = data[name]['Pctchange'].values
@@ -52,25 +53,31 @@ def main_page():
         df_change.dropna(inplace=True)
         df_change = df_change.clip(lower=-0.07)
 
-
         st.write("""
         ### Stock Statistics""")
         #correlation matrix
-        corr = df_change.corr()
-        st.write("""Correlation Matrix""",width = 1000)
+        if len(company_list) > 1:
+            corr = df_change.corr()
+            st.write("""Correlation Matrix""",width = 1000)
 
-        st.write(corr.style.background_gradient(cmap='BrBG_r'))
+            st.write(corr.style.background_gradient(cmap='BrBG_r'))
 
         st.write("""
         #
         """)
 
         #plot distribution of pct change
-        fig, axes = plt.subplots(1, len(company_list) , figsize=(30, 10))
-        for name, x in zip(company_list, range(len(company_list))):
-            sns.histplot(data=df_change[name], ax=axes[x], kde=True, bins=35)
-            # sns.lineplot(x=df_change[name], y=norm_cdf[name], ax=axes[1,x])
-        st.pyplot(fig)
+        if len(company_list) > 1:
+            fig, axes = plt.subplots(1, len(company_list) , figsize=(30, 10))
+            for name, x in zip(company_list, range(len(company_list))):
+                sns.histplot(data=df_change[name], ax=axes[x], kde=True, bins=35)
+                # sns.lineplot(x=df_change[name], y=norm_cdf[name], ax=axes[1,x])
+            st.pyplot(fig)
+        else:
+            fig, axes = plt.subplots(1, 1 , figsize=(10, 5))
+            sns.histplot(data=df_change[company_list[0]], ax=axes, kde=True, bins=35)
+            st.pyplot(fig)
+
 
 
         #Portfolio monitoring

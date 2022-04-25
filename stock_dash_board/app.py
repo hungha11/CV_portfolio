@@ -7,6 +7,9 @@ from Statistics import *
 from Charting import *
 import plotly.express as px
 
+def main():
+    main_page()
+    sidebar_page()
 
 def main_page():
     st.title("Stock Dashboard\n "
@@ -166,6 +169,5 @@ def sidebar_page():
 
 if __name__ == '__main__':
     st.set_page_config(page_title='Portfolio Risk Monitoring', page_icon='📈',layout='wide')
-    main_page()
-    sidebar_page()
+    main()
 

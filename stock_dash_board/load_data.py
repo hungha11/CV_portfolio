@@ -3,7 +3,7 @@ import pandas as pd
 import datetime
 import investpy
 
-StockList = pd.read_csv('StockList.csv',index_col='Ticker')
+StockList = pd.read_csv('./StockList.csv',index_col='Ticker')
 def load_stock_data(symbol):
     start = '2019-01-01'
 

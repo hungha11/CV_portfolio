@@ -46,15 +46,14 @@ def main_page():
 
         data = d.copy()
 
-
+        data = d.copy()
+        # Slice to get needed data
         for name in company_list:
-            data[name]['Pctchange'] = data[name].close.pct_change()
-            data[name] = data[name]['Pctchange'].values
+            data[name] = data[name]['PctChange']
 
         # create dataframe from dictionary
-        df_change = pd.DataFrame({name: list(pct_change) for name, pct_change in data.items()})
-        df_change.dropna(inplace=True)
-        df_change = df_change.clip(lower=-0.07)
+        df_change = pd.DataFrame.from_dict(data)
+        df_change.dropna()
 
         st.write("""
         ### Stock Statistics""")

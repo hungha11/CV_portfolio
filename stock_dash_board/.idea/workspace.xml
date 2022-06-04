@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3c7e5876-916d-4344-ae86-aeae5cda1b86" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/csv-plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ETF_dash_board/quantData/Dataloading.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ETF_dash_board/quantData/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ETF_dash_board/quantData/pipline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.ipynb_checkpoints/portfolioAnalysis-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../.ipynb_checkpoints/portfolioAnalysis-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../portfolioAnalysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../portfolioAnalysis.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vnquant/vnquant/vnquant/vnquant.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/vnquant/vnquant/vnquant/vnquant.egg-info/PKG-INFO" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2A6iXhSUYnw7Ul9yFn2JmhH5Ulj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c7e5876-916d-4344-ae86-aeae5cda1b86" name="Changes" comment="" />
+      <created>1654336479027</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654336479027</updated>
+      <workItem from="1654336481779" duration="13000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

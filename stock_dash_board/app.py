@@ -101,7 +101,7 @@ def main_page():
             lastestPrice['Weight'].iloc[i] = round(
                 (lastestPrice['Number of Shares'].iloc[i] * lastestPrice['Lastest Price'].iloc[i]) / sum(
                     lastestPrice['Number of Shares'] * lastestPrice['Lastest Price']), 4)
-        portfolio = pd.DataFrame(index=company_list, columns=['Weight', 'Beta', 'Adjbeta', 'Std', 'AdjStd'])
+        portfolio = pd.DataFrame(index=company_list, columns=['Weight', 'Beta', 'Adjbeta', 'Std'])
         portfolio.Weight = lastestPrice.Weight
         # Collecting data and calculate beta for each symbol
         index = 'VN'
@@ -118,7 +118,6 @@ def main_page():
         portfolio['Beta'] = df_risk.Beta.values
         portfolio['Adjbeta'] = portfolio['Beta'] * portfolio['Weight']
         portfolio['Std'] = df_risk.Std.values
-        portfolio['AdjStd'] = portfolio['Std'] * portfolio['Weight']
 
         st.write(portfolio, use_container_width=True)
 
@@ -128,7 +127,13 @@ def main_page():
         pie = px.pie(portfolio.Weight*100, values='Weight', names=portfolio.index, title='Portfolio Weight', color_discrete_sequence=px.colors.sequential.RdBu)
         st.plotly_chart(pie, use_container_width=True)
         portfolio_beta = round(portfolio['Adjbeta'].sum(), 4)
-        portfolio_std = round(portfolio['AdjStd'].sum(), 4)
+
+        returns = df_change
+        returns.dropna()
+        mean_returns = returns.mean()
+        cov_matrix = returns.cov()
+        portfolio_std = round(np.sqrt(100 * np.dot(portfolio.Weight.T, np.dot(cov_matrix * 250, portfolio.Weight))), 4)
+
         st.write(f"""##### Portfolio Beta: {portfolio_beta}""")
         st.write(f'##### Portfolio Standard Deviation: {portfolio_std}%')
     else:
